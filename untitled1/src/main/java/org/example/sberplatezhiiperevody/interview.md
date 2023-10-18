@@ -308,6 +308,8 @@ org.springframework.beans.factory.BeanCreationException: Could not autowire fiel
    @Qualifier("имя_бина")
    private Utils utils;
    ```
+   
+--h
 
 3. **Исключить один из бинов**: Если оба бина не нужны, можете удалить один из них из конфигурации Spring.
 
