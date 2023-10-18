@@ -227,7 +227,7 @@ void printLength () {
 System.out.println ( str.length ()) ; 
 } 
 public static void main ( String [] args) { 
-new Test (). new BO 
+new Test (). new B();
 } } 
 Что получится в результате компиляции и исполнения? Почему?
 

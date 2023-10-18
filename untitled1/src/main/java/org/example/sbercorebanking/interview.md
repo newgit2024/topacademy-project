@@ -1,371 +1,303 @@
-##
-package any_classes;
+###
+JFrog Nexus - это мощная система управления артефактами, которая позволяет хранить и управлять артефактами, такими как библиотеки, зависимости, контейнеры Docker и другие компоненты, используемые в разработке и CI/CD процессах. Nexus имеет несколько разновидностей, включая Nexus Repository OSS (открытая версия, бесплатная), Nexus Repository Pro (платная версия с дополнительными функциями и поддержкой) и другие.
 
-public class RefactorTest {
-    public void someMethod() {
-        System.out.println("do Some usual");
-        System.out.println("do Some usual1");
-        RefCreator.printOperativeRef();
-        System.out.println("do Some usual2");
-        System.out.println("do Some usual3");
+Основные возможности JFrog Nexus включают:
+
+1. Хранение артефактов: Nexus позволяет хранить различные типы артефактов, такие как JAR-файлы, WAR-файлы, Docker-образы, NPM-пакеты, и многое другое.
+
+2. Проксирование удаленных репозиториев: Вы можете настроить Nexus для проксирования удаленных репозиториев, таких как Maven Central, JCenter, Docker Hub и другие. Это позволяет ускорить скачивание зависимостей и снизить нагрузку на общедоступные репозитории.
+
+3. Управление зависимостями: Nexus обеспечивает управление зависимостями между артефактами и контроль версий.
+
+4. Безопасность и аутентификация: Вы можете настроить правила доступа и аутентификации для обеспечения безопасности ваших артефактов.
+
+5. Интеграция с CI/CD: Nexus интегрируется с популярными инструментами CI/CD, такими как Jenkins, TeamCity и другие.
+
+6. Поддержка различных форматов: Nexus поддерживает различные форматы артефактов, такие как Maven, Gradle, NPM, Docker и другие.
+
+7. Удобное управление артефактами: Интуитивный веб-интерфейс позволяет легко загружать, скачивать и управлять артефактами.
+
+Чтобы начать использовать JFrog Nexus, вам необходимо установить и настроить его в соответствии с вашими потребностями. Вам также может потребоваться интегрировать Nexus с вашей системой сборки и CI/CD процессами.
+
+JFrog Nexus популярен среди разработчиков и DevOps-инженеров благодаря своей надежности и богатым функциональным возможностям для управления артефактами и зависимостями.
+
+
+###
+Artifactory - это мощная система управления артефактами, предоставляемая компанией JFrog. Она позволяет организациям хранить, управлять и развертывать различные типы артефактов, такие как библиотеки, зависимости, Docker-образы, NPM-пакеты, RPM-пакеты и другие компоненты разработки программного обеспечения. Artifactory также интегрируется с популярными инструментами CI/CD и системами сборки.
+
+Основные возможности Artifactory включают:
+
+1. Хранение артефактов: Artifactory предоставляет место для хранения разнообразных артефактов, поддерживая различные форматы и типы компонентов.
+
+2. Проксирование удаленных репозиториев: Artifactory может проксировать удаленные репозитории, такие как Maven Central, JCenter, Docker Hub и другие. Это позволяет ускорить загрузку зависимостей и обеспечить доступность даже в условиях отсутствия интернета.
+
+3. Управление зависимостями: Artifactory позволяет управлять зависимостями и контролировать версии артефактов.
+
+4. Безопасность и аутентификация: Вы можете настроить правила доступа и аутентификации для обеспечения безопасности ваших артефактов.
+
+5. Интеграция с CI/CD: Artifactory интегрируется с популярными системами сборки, такими как Jenkins, Travis CI, GitLab CI/CD и другими.
+
+6. Поддержка различных форматов: Artifactory поддерживает разные форматы артефактов, включая Maven, Gradle, NPM, Docker, RPM и другие.
+
+7. Удобное управление артефактами: Веб-интерфейс Artifactory обеспечивает удобный доступ к артефактам, возможность поиска и просмотра метаданных.
+
+Artifactory позволяет организациям улучшить управление своими артефактами, обеспечивая надежность и доступность. Она подходит для команд разработки, DevOps и CI/CD, и широко используется в индустрии разработки программного обеспечения. Artifactory предоставляет как бесплатную версию (Artifactory OSS), так и коммерческие версии с дополнительными функциональными возможностями и поддержкой.
+
+
+###
+//что выведет данный код
+Stream.of("b", "a", "d", "c")
+        .map(val -> val + 1)
+        .peek(System.out::println)
+        .forEach(System.out::println);// b1, b1, a1, a1, и тд
+
+
+
+
+
+//что выведет данный код
+Stream.of("b", "a", "d", "c")
+        .map(val -> val + 1)
+        .peek(System.out::println) b1, a1, d1, c1, a1, b1, c1, d1
+        .sorted()
+        .forEach(System.out::println);
+
+
+
+
+
+
+//как отработает следующий код
+List<String> list = Stream.of("b", "a", "d", "c")
+        .map(val -> val + "t")
+        .toList();
+
+list.add("w");
+System.out.println(list.size());
+
+
+
+
+
+
+@RestController
+  public class MyController {
+    int count = 0;
+
+    @GetMapping("/getAdd")
+    public void getAdd() {
+        count++;
     }
 
-    public void someElseMethod() {
-        System.out.println("do Some usual");
-        System.out.println("do Some usual1");
-        RefCreator.printHistoricalRef();
-        System.out.println("do Some usual2");
-        System.out.println("do Some usual3");
-    }
-
-    static class RefCreator {
-        static void printOperativeRef() {
-            System.out.println("operative ref");
-        }
-
-        static void printhistoricalRef() {
-            System.out.println("historical ref");
-        }
-    }
-
-    public static void main(String[] args) {
-        RefactorTest refactorTest = new RefactorTest();
-        refactorTest.someMethod();
-        refactorTest.someElseMethod();
+    @GetMapping("/get")
+     public int get() {
+        return count;
     }
 }
 
 
-Для устранения дублирования кода в методах `someMethod` и `someElseMethod`, мы можем вынести повторяющийся код в отдельный метод и вызывать этот метод из обоих методов. Вот оптимизированный код:
+//В данном коде значение переменной `count` в классе `MyController` будет всегда равно нулю. Каждый раз, когда выполняется запрос к методу `getAdd()` через путь `/getAdd`, инкрементация переменной `count` происходит только в пределах одного вызова метода. Когда метод завершается, значение `count` не сохраняется между запросами. Это означает, что при каждом новом запросе к `/getAdd`, переменная `count` будет снова установлена в 0, и при запросе к `/get` будет возвращено значение 0.
 
-```java
-package any_classes;
+Чтобы сохранить значение `count` между запросами, вам нужно использовать способ хранения состояния между запросами, такой как хранение значения в базе данных, внешнем файле, кеше или сессии.
 
-public class RefactorTest {
-    public void someMethod() {
-        doCommonStuff();
-        RefCreator.printOperativeRef();
-    }
 
-    public void someElseMethod() {
-        doCommonStuff();
-        RefCreator.printHistoricalRef();
-    }
 
-    private void doCommonStuff() {
-        System.out.println("do Some usual");
-        System.out.println("do Some usual1");
-        System.out.println("do Some usual2");
-        System.out.println("do Some usual3");
-    }
 
-    static class RefCreator {
-        static void printOperativeRef() {
-            System.out.println("operative ref");
-        }
 
-        static void printHistoricalRef() {
-            System.out.println("historical ref");
-        }
-    }
+@Service
+public class ServiceTest{
+  @Transactional
+  public void test1{
+      test2();
+  }
 
-    public static void main(String[] args) {
-        RefactorTest refactorTest = new RefactorTest();
-        refactorTest.someMethod();
-        refactorTest.someElseMethod();
-    }
+  @Transactional(propagation = Propagation.REQUIRES_NEW)
+  public void test2(){
+  }
 }
-```
 
-Теперь повторяющийся код вынесен в метод `doCommonStuff`, который вызывается из обоих методов `someMethod` и `someElseMethod`. Это снижает дублирование кода и делает программу более поддерживаемой.
 
-Для решения задачи с использованием паттернов проектирования, мы можем применить несколько паттернов, таких как:
 
-1. **Шаблонный метод (Template Method)**: Мы можем создать абстрактный класс, представляющий метод `someMethod` и `someElseMethod` как абстрактные методы. Затем создать конкретные подклассы, реализующие эти методы.
 
-2. **Фабричный метод (Factory Method)**: Мы можем использовать фабричный метод для создания экземпляров классов `RefOperative` и `RefHistorical`. Это позволит нам динамически выбирать, какой метод вызывать.
 
-Вот пример реализации с использованием этих паттернов:
+@Component
+@Scope(name = "prototype", description = "")
+public class TestBeanPrototype {
 
-```java
-package any_classes;
+}
 
-public class RefactorTest {
-    public void someMethod(RefCreator refCreator) {
-        refCreator.doSome();
-        refCreator.printRef();
+@Service
+public class TestBean {
+
+
+    private final TestBeanPrototype testBeanPrototype;
+    
+    @Lookup
+    public TestBeanPrototype getTestBeanPrototype() {
+        return null;
     }
 
+}
+
+@SpringBootApplication
+public class Main {
+
     public static void main(String[] args) {
-        RefactorTest refactorTest = new RefactorTest();
+        ApplicationContext context = SpringApplication.run(Main.class, args);
+        var singletonBeanFirst = context.getBean(TestBean.class);
+        var prototypeBeanFirst = singletonBeanFirst.getTestBeanPrototype();
+
+        var singletonBeanSecond = context.getBean(TestBean.class);
+        var prototypeBeanSecond = singletonBeanSecond.getTestBeanPrototype();
+
+        System.out.println(prototypeBeanFirst.equals(prototypeBeanSecond));
+    }
+
+} 
+
+
+
+
+
+    person
+    id      name        pos_id
+    1       Владимир    1
+    2       Иван        3
+    3       Александр   2
+
+    positions
+    id      title
+    1       Дизайнер
+    2       Тестировщик
+    3       Разработчик
+
+    получить результат в виде таблицы
+    id      name        pos_title
+    1       Владимир    Дизайнер
+    2       Иван        Разработчик
+    3       Александр   Тестировщик
+ 
+ SELECT (pers.id, pers.name, pos.title AS pos_title) FROM
+ person AS pers
+ JOIN positions AS pos
+ ON pers.pos_id=pos.id;
+ 
+ 
+ 
+ 
+     category
+    id    name
+    1     сладкое
+    2     соленое
+    3     фрукты
+
+    product
+    id    category_id    price    name
+    1     1              50       печенье
+    2     1              75       мармелад
+    3     1              100      конфеты
+    4     1              125      шоколад
+    5     2              150      арахис
+    6     2              75       чипсы
+    7     2              150      кальмары
+    8     3              175      лимон
+    9     3              200      гранат
+
+    выбрать все продукты в которых категория такая же как и у конфет и цена меньше 100
+    
+
+
+
+
+
+transactions
+        date                    cash_flow
+        2023-01-01      -1000
+        2023-01-02      -100
+        2023-01-03       50
+
+получить нарастающий итог для денежного потока каждый день таким образом, чтобы в конечном итоге получилась таблица
+        date                    cash_flow                   cumulative_cf
+        2023-01-01          -1000                       -1000
+        2023-01-02          -100                        -1100
+        2023-01-03           50                         -1050
         
-        RefCreator operativeCreator = new RefOperative();
-        RefCreator historicalCreator = new RefHistorical();
 
-        refactorTest.someMethod(operativeCreator);
-        refactorTest.someMethod(historicalCreator);
-    }
-}
 
-abstract class RefCreator {
-    abstract void doSome();
-    void printRef() {
-        System.out.println("Ref");
-    }
-}
 
-class RefOperative extends RefCreator {
-    void doSome() {
-        System.out.println("Operative do Some usual");
-    }
-
-    @Override
-    void printRef() {
-        System.out.println("Operative ref");
-    }
-}
-
-class RefHistorical extends RefCreator {
-    void doSome() {
-        System.out.println("Historical do Some usual");
-    }
-
-    @Override
-    void printRef() {
-        System.out.println("Historical ref");
-    }
-}
-```
-
-В этом примере мы создали абстрактный класс `RefCreator`, представляющий шаблонный метод `someMethod`. Затем у нас есть два конкретных подкласса: `RefOperative` и `RefHistorical`, которые реализуют абстрактные методы. Метод `someMethod` теперь принимает экземпляр `RefCreator`, позволяя нам выбирать, какой метод вызвать во время выполнения.
-
-
-###
-Задача 2. 
- public class Test { static String str =" hello": 
-
-public static void change ( String s) { s =" world" ; 
-}
-public static void main ( String [] args) { 
-
-System.out.println ( str): change ( str):; System.out.println ( str);}
-Что напечатает метод main? Почему?
-
-
-Метод `main` напечатает следующее:
-
-```
-hello
-hello
-```
-
-Почему? Давайте разберемся:
-
-1. Изначально, в методе `main`, у нас есть строка `str`, которая равна "hello".
-2. Мы передаем эту строку в метод `change`.
-3. Внутри метода `change` у нас есть параметр `s`, и мы присваиваем этому параметру новое значение "world". Однако, это изменяет только значение `s` внутри метода `change`, но не изменяет значение переменной `str`, определенной в классе `Test`. Это происходит из-за того, что строки в Java - это неизменяемые объекты.
-4. После вызова `change`, значение переменной `str` всё еще "hello", и метод `main` выводит его два раза, что дает вывод "hello\nhello".
-
-Важно отметить, что параметр `s` в методе `change` и переменная `str` - это две разные ссылки на объект `String`. Изменение значения одной из них не влияет на другую, поскольку строки в Java неизменяемы.
-
-где находится стринг пул?
-ChatGPT
-В Java существует концепция String Pool (строкового пула), который является частью памяти в куче (heap memory), где хранятся строки, созданные с использованием литералов строк (например, "hello") и, в некоторых случаях, строки, созданные с использованием метода String.intern().
-
-Когда вы создаете строку с использованием литерала (например, "hello"), Java проверяет, существует ли уже такая строка в строковом пуле. Если строка с таким значением уже существует, то вместо создания нового объекта строки, будет возвращена ссылка на существующий объект. Это делается для оптимизации использования памяти.
-
-Таким образом, строковый пул представляет собой механизм, который позволяет избежать создания дублирующихся строк в памяти. Поэтому строки с одинаковым значением будут совместно использовать один и тот же объект в строковом пуле.
-
-Однако, не все строки помещаются в строковый пул. Например, строки, созданные с помощью конструктора new String(), не попадают в строковый пул. В этом случае будет создан новый объект строки вне пула.
-
-
-Строки, созданные через операцию конкатенации (`+`) с использованием литералов или с помощью метода `String.concat()`, как правило, попадают в строковый пул, но существуют некоторые исключения.
-
-При конкатенации строк с использованием литералов (например, `"Hello" + "World"`) или с использованием метода `concat()`, полученный результат будет помещен в строковый пул, если такой результат не существует в пуле.
-
-Вот примеры:
-
-```java
-String str1 = "Hello";
-String str2 = "World";
-String result = str1 + str2; // Результат будет в строковом пуле
-```
-
-Однако есть исключение: если одна из строк была создана с использованием `new String()`, результат конкатенации не попадет в строковый пул:
-
-```java
-String str1 = "Hello";
-String str2 = new String("World");
-String result = str1 + str2; // Результат НЕ будет в строковом пуле
-```
-
-Важно помнить, что в Java строки неизменяемы, поэтому конкатенация строк создает новую строку, которая затем либо добавляется в пул, либо остается вне пула, в зависимости от вышеуказанных условий.
-
-
-###
-Задача 3. 
-public class Test { 
-class A { 
-String str =" ab": 
-printLength ();
-A() { 
-printLength ();
-}
-
-void printLength () { 
-
-System.out.println ( str.length ()) ; 
-} 
-} 
-
-class B extends A { 
-
-String str =" abc" ; 
-
-void printLength () { 
-
-System.out.println ( str.length ()) ; 
-} 
-public static void main ( String [] args) { 
-new Test (). new BO 
-} } 
-Что получится в результате компиляции и исполнения? Почему?
-
-
-
-При компиляции данного кода возникнет ошибка. Давайте разберемся, какие проблемы есть в коде:
-
-1. Внутренний класс `B` пытается переопределить метод `printLength`, который в классе `A` не объявлен как `abstract`. Внутренние классы не могут переопределять методы из внешних классов без явного наследования, и, в данном случае, такой явной связи между `A` и `B` нет. Поэтому компилятор выдаст ошибку.
-
-2. В методе `main` создается объект класса `B` с помощью оператора `new Test().new B()`. Однако для создания объекта внутреннего класса `B` внутри класса `Test`, он должен быть объявлен как `static`. Это означает, что внутренний класс `B` должен иметь следующую сигнатуру:
-
-```java
-class B extends A {
-    // ...
-}
-```
-
-Затем, в методе `main`, можно создать объект `B` следующим образом:
-
-```java
-new Test.B();
-```
-
-Итак, чтобы код успешно скомпилировался и выполнился, необходимо:
-
-- Изменить метод `printLength` в классе `A`, чтобы он был `abstract`, либо убрать переопределение метода в классе `B`.
-- Добавить ключевое слово `static` перед объявлением класса `B`.
-- В методе `main` создать объект класса `B` как `new Test.B()`.
-
-
-###
-Задача 4. 
-public String join ( String [] args) { 
-String result ="";
- for ( String arg: args) { 
-result+ arg;
- result ="" ;
-} 
-
-return result: 
-}
-
-Какие минусы у данного метода? Проведите CodeReview этого метода
-
-
-Этот метод, предположительно, призван объединять строки, переданные в массиве `args`, но на самом деле он не выполняет эту задачу правильно из-за нескольких проблем:
-
-1. `String result = "";` - Изначально создается пустая строка `result`.
-
-2. В цикле `for (String arg : args)`, каждая строка `arg` конкатенируется с пустой строкой `result` с помощью оператора `+`. Это создает новую строку, которая является конкатенацией предыдущего `result` и `arg`. Однако, эта новая строка нигде не сохраняется.
-
-3. `result = "";` - После каждой итерации цикла `result` устанавливается в пустую строку. Это означает, что результат конкатенации строк в предыдущей итерации будет заменен на пустую строку, и в итоге `result` всегда будет пустой строкой.
-
-4. `return result;` - На выходе метод возвращает всегда пустую строку, независимо от содержания массива `args`.
-
-Таким образом, метод `join` никогда не выполняет задачу объединения строк в массиве `args`. Он всегда возвращает пустую строку. 
-
-Для правильного объединения строк в массиве можно воспользоваться классом `StringBuilder` или `StringJoiner`, который предоставляют эффективные и правильные способы объединения строк без создания лишних объектов `String`.
-
-
-###
-Задача 5. 
-Ваше Spring приложение падает при запуске: 
-Caused by: 
-org.springframework.beans.factory.BeanCreationException: Could not autowire field: private ru.sbrf.app.Utils ru.sbrf.app.handlers.Createhandler.utils: nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [ m.sbrf.app.Utils] is defined: expected single matching bean but found 2: commonUtils.customUtils 
-В чём может быть проблема? Как её можно решить?
-
-Ошибка `org.springframework.beans.factory.NoUniqueBeanDefinitionException` указывает на то, что Spring не может разрешить зависимость для инъекции бина в поле `private ru.sbrf.app.Utils ru.sbrf.app.handlers.Createhandler.utils`, потому что найдено два бина типа `ru.sbrf.app.Utils`: `commonUtils.customUtils`. То есть Spring не может определить, какой из двух бинов должен быть внедрен в поле `utils` класса `Createhandler`.
-
-Есть несколько способов решить эту проблему:
-
-1. **Исключить неоднозначность**: Вы можете привести к уникальному имени один из бинов, чтобы Spring мог выбрать правильный бин для инъекции. Например, измените имя одного из бинов в вашем конфигурационном файле Spring.
-
-2. **Явное указание квалификации бина**: Используйте аннотацию `@Qualifier` для явного указания, какой из бинов следует инъецировать. Например:
-
-   ```java
-   @Autowired
-   @Qualifier("имя_бина")
-   private Utils utils;
+------
+Давайте рассмотрим ваши вопросы поочередно:
+
+1. **Первый код**:
+    - `Stream.of("b", "a", "d", "c")` создает поток из четырех элементов.
+    - `map(val -> val + 1)` конкатенирует каждый элемент строки с "1".
+    - `peek(System.out::println)` выводит каждый элемент потока, поэтому будет выведено "b1", "a1", "d1", "c1".
+    - `forEach(System.out::println)` снова выводит каждый элемент потока, поэтому элементы будут выведены вдвойне.
+    
+   Вывод:
+   ```
+   b1
+   b1
+   a1
+   a1
+   d1
+   d1
+   c1
+   c1
    ```
 
-3. **Исключить один из бинов**: Если оба бина не нужны, можете удалить один из них из конфигурации Spring.
+2. **Второй код**:
+    - Тот же код, но после `peek(System.out::println)` следует операция `sorted()`, которая сортирует элементы по алфавиту. Поэтому после сортировки будут выведены в порядке "a1", "b1", "c1", "d1".
+    - Затем `forEach(System.out::println)` выводит отсортированные элементы.
 
-4. **Измените способ инъекции**: Вместо поля можно использовать конструктор для инъекции зависимости, что может избежать этой проблемы, так как можно выбрать, какой именно бин использовать при создании экземпляра класса.
+   Вывод:
+   ```
+   a1
+   b1
+   c1
+   d1
+   ```
 
-Прежде всего, рекомендуется рассмотреть первый вариант, чтобы избежать неоднозначности и обеспечить уникальность имен бинов.
+3. **Третий код**:
+    - `toList()` преобразует поток в список, и этот список неизменяем.
+    - `list.add("w")` попытка добавить элемент в неизменяемый список вызовет `UnsupportedOperationException`.
+    - `System.out.println(list.size())` не выполнится из-за предыдущей ошибки.
+
+4. **Контроллер и сервис**:
+    - Контроллер `MyController` имеет два метода:
+      - `/getAdd` инкрементирует счетчик `count`.
+      - `/get` возвращает текущее значение `count`.
+    - Сервис `ServiceTest` содержит два метода, `test1` и `test2`, оба помечены как транзакционные, но `test2` имеет отдельную транзакцию (REQUIRES_NEW).
+    - `@Transactional(propagation = Propagation.REQUIRES_NEW)` в `test2` означает, что он будет выполняться в собственной транзакции и независимо от родительской транзакции, если она существует.
+
+5. **Spring Beans**:
+    - В вашем коде `TestBean` и `TestBeanPrototype` сконфигурированы с использованием аннотаций `@Component` и `@Scope`. `TestBean` имеет метод `getTestBeanPrototype`, который аннотирован `@Lookup`, и должен возвращать новый экземпляр `TestBeanPrototype` при каждом вызове.
+    - В методе `main` создается контекст приложения, и вызываются два метода `getTestBeanPrototype` на одном экземпляре `TestBean`, и затем проверяется, равны ли полученные экземпляры. Они должны быть разными, так как `@Scope("prototype")` указывает, что каждый вызов должен создавать новый экземпляр.
+
+6. **SQL-запросы**:
+    - Для запросов к базе данных вы представили две таблицы `person` и `positions`. Для получения результата в виде таблицы с использованием SQL, вы можете воспользоваться запросом с объединением (JOIN). Здесь представлена SQL-команда, которая соединяет две таблицы:
+    ```sql
+    SELECT pers.id, pers.name, pos.title AS pos_title
+    FROM person AS pers
+    JOIN positions AS pos
+    ON pers.pos_id = pos.id;
+    ```
+    Этот запрос вернет таблицу с столбцами `id`, `name`, и `pos_title`, которая соответствует вашему требованию.
+
+7. **SQL-запрос для продуктов**:
+    - Вы хотите выбрать все продукты, у которых категория такая же, как у конфет, и цена меньше 100. Вы можете использовать SQL-запрос с фильтрацией:
+    ```sql
+    SELECT p.*
+    FROM product p
+    JOIN category c ON p.category_id = c.id
+    WHERE c.name = 'конфеты' AND p.price < 100;
+    ```
+    Этот запрос вернет все продукты с категорией "конфеты" и ценой менее 100.
+
+8. **Вычисление кумулятивного денежного потока**:
+    - Для вычисления кумулятивного денежного потока (cumulative cash flow) вы может
+
 
 
 ###
-Для решения этой задачи вы можете использовать стек (Stack) для отслеживания пути в каталоге. Вот пример Java-кода, который реализует данную логику:
 
-
-каталоги
-пользователь ходит по каталогам
-Например:/var/lib/././../test/../check/result
-Необходимо вычислить конечный путь: 5/// var/ check/ result
-Еще пару примеров
-Вход:/var/././test/anotherExample 10// Выход:/ var/ test/ anotherExample
-Вход:/var/check/../../test/oneМоге Example 3// Выход:/ опемогеxamрlе
-todo решение задачи
-
-
-```java
-import java.util.Stack;
-
-public class SimplifyPath {
-    public static String simplifyPath(String path) {
-        String[] components = path.split("/");
-        Stack<String> stack = new Stack<>();
-
-        for (String component : components) {
-            if (component.equals("..")) {
-                if (!stack.isEmpty()) {
-                    stack.pop();
-                }
-            } else if (!component.equals(".") && !component.isEmpty()) {
-                stack.push(component);
-            }
-        }
-
-        StringBuilder result = new StringBuilder();
-        for (String component : stack) {
-            result.append("/").append(component);
-        }
-
-        return result.length() > 0 ? result.toString() : "/";
-    }
-
-    public static void main(String[] args) {
-        String path1 = "/var/././test/anotherExample";
-        String simplifiedPath1 = simplifyPath(path1);
-        System.out.println(simplifiedPath1);  // Вывод: "/var/test/anotherExample"
-
-        String path2 = "/var/check/../../test/oneExample";
-        String simplifiedPath2 = simplifyPath(path2);
-        System.out.println(simplifiedPath2);  // Вывод: "/test/oneExample"
-    }
-}
-```
-
-Этот код разбивает входную строку `path` на компоненты и использует стек для отслеживания "правильного" пути, игнорируя `.` и удаляя предыдущий компонент при обнаружении `..`. Наконец, результат собирается из элементов стека.
